@@ -1,0 +1,47 @@
+h1 {
+    text-align: center;
+}
+
+form {
+    width: 500px;
+    margin: 200px auto;
+    border: 1px solid black;
+    text-align: center;
+}
+
+div {
+    width: 100%;
+    margin: 15px auto;
+}
+
+/* label {
+    display: block;
+    padding: 20px;
+    font-size: 25px;
+} */
+
+#inputUsernamePassword {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #797979;
+    font-size: 20px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+button {
+    margin: 20px;
+    width: 100px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+span {
+    display: block;
+    margin-left: 20px;
+    color: red;
+    font-style: italic;
+}
+
