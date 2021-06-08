@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style1.css" />
+    <link rel="stylesheet" href="./style/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/numbro@2.3.1/dist/numbro.min.js"></script>
     <title>Document</title>
@@ -12,17 +12,11 @@
 <body>
 
     <h1>Country Comparison</h1>
+
     <div class="container">
-        <div id="sidebar1">
-            <h4 id="max"></h4><br />
-            <p id="min"></p><br />
-            <p id="diff"></p>
-        </div>
-        <div id="sidebar2">
-            <p>Country list</p>
-            <div class="searchWrapper">
-                <input type="text" name="searchBar" id="searchBar" placeholder="Search Country" />
-            </div>
+        <div class="right">
+            <h2 id="cl">Country List</h2>
+            <input type="text" name="searchBar" id="searchBar" placeholder="Search Country" />
             <div class="list">
                 <table class="table table-stripped">
                     <tbody id="data">
@@ -32,15 +26,15 @@
             </div>
             <button id="compare">Compare</button>
         </div>
-        
-    </div>
-    <footer>
-        <canvas id="chart" width="1200" height="800"></canvas>
-        <script>
-           
-            </script>
-    </footer>
+        <div class="left">
+            <h4 id="max"></h4>
+            <h4 id="min"></h4>
+            <h4 id="diff"></h4>
+        </div>
 
-   <script src="./javascript/script.js"></script>
+        <canvas id="chart" width="1200" height="800"></canvas>
+    </div>
+    
+    <script src="./javascript/script.js"></script>
 </body>
 </html>

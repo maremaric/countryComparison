@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    max-width: 1140;
+    height: 700px;
+}
+
+.right {
+    border: 1px solid black;
+    height: 500px;
+    width: 500px;
+    float: right;
+    margin-right: 10%;
+}
+
+.left {
+    height: 500px;
+    width: 500px;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+h4 {
+    text-align: center;
+}
+
+.list {
+    border: 1px solid black;
+    width: 250px;
+    height: 300px;
+    margin: auto;
+    margin-top: 5%;
+    overflow: scroll;
+}
+
+#cl {
+    text-align: center;
+    font-weight: bold;
+}
+
+#searchBar {
+    height: 32px;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin-left: 25%;
+    width: 50%;
+    border-radius: 15px;
+    outline: none;
+}
+
+button {
+    margin-left: 40%;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.js-country-element {
+    display: flex;
+}
+
+input[type='checkbox'] { 
+    margin-top: 18px;
+    margin-right: 8px;
+}
+
+#chart {
+    max-width: 1200px;
+    max-height: 800px;
+    margin: auto;
+}

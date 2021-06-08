@@ -1,4 +1,3 @@
-
 const apiUrl = 'https://restcountries.eu/rest/v2/all';
 
     async function getData() 
@@ -10,20 +9,23 @@ const apiUrl = 'https://restcountries.eu/rest/v2/all';
 
         if(data.length > 0) 
         {
-            
             for(let i = 0; i < data.length; i++) {
                 let temp = document.createElement('div');
                 temp.innerHTML = "<div id=" + data[i].name + " class='js-country-element'><input id=" + data[i].name + " type='checkbox' value=" + data[i].population + "><p>" + data[i].name + "</p></div>";
-                // temp += `<input id='${data[i].name}' type='checkbox' value='${data[i].population}' />`;
-                // temp += "<tr>";
-                // temp += "<td>" + data[i].name + "</td>" + "</tr>";
                 document.getElementById("data").appendChild(temp);
             }
         }
     }
-        
+
+
     function getAllCheckedCountries() {
         var checkbox = document.querySelectorAll('input[type="checkbox"]:checked');
+
+        if(checkbox.length > 4) 
+        {
+            alert("You can only select 4 countries!");
+            throw new Error("More than 4 countries were selected!");
+        }
 
             var arrayCountries = [];
 
@@ -43,11 +45,11 @@ const apiUrl = 'https://restcountries.eu/rest/v2/all';
             });
             console.log('Checked arr countries: ', arrayCountries);
             
-            return arrayCountries;
+        return arrayCountries;
     }
-    
+
     getData();
-    
+
     let btnCompare = document.getElementById("compare");
     let max = document.getElementById("max");
     let min = document.getElementById("min");
@@ -56,7 +58,6 @@ const apiUrl = 'https://restcountries.eu/rest/v2/all';
     btnCompare.addEventListener('click', () => {
 
         arrayCountries = getAllCheckedCountries();
-
 
         let maxValue = {
             'name': arrayCountries[0].name,
@@ -102,6 +103,7 @@ const apiUrl = 'https://restcountries.eu/rest/v2/all';
             console.log(objToRet)
             return objToRet;
         }
+
         // chart
         const ctx = document.getElementById('chart').getContext('2d');
         let allCheckedCountries = getAllCheckedCountries();
@@ -111,7 +113,7 @@ const apiUrl = 'https://restcountries.eu/rest/v2/all';
         data: {
             labels: seperatedArrs.countryNames,
             datasets: [{
-                label: 'Country',
+                label: '',
                 data: seperatedArrs.countryValues,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -141,7 +143,7 @@ const apiUrl = 'https://restcountries.eu/rest/v2/all';
 
     });
 
-    
+
 
     // // Search bar
     const searchBar = document.getElementById("searchBar");
@@ -153,11 +155,11 @@ const apiUrl = 'https://restcountries.eu/rest/v2/all';
             console.log('Country id: ', country.id)
             console.log('Country style: ', !(country.id.toLowerCase().includes(searchText.toLowerCase())));
             if ((country.id.toLowerCase().includes(searchText.toLowerCase()))) {
-                country.style.display = 'block';
+                country.style.display = 'flex';
             } else {
                 country.style.display = 'none';
             }
-        })
+        });
     };
-    searchBar.addEventListener('input', () => searchCountries(searchBar.value));
 
+    searchBar.addEventListener('input', () => searchCountries(searchBar.value));
